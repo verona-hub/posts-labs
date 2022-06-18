@@ -7,9 +7,7 @@ import { MyStateManagement } from './components/Context/MyStateManagement';
 
 const App = () => {
     return (
-        <MyStateManagement.Provider vaue={{
-
-        }}>
+        <MyStateManagement.Provider value={{}}>
             <div className="App">
                 This is my App
             </div>
