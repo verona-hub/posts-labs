@@ -1,11 +1,13 @@
 import React from 'react';
 
 
-const Post = () => {
+const Post = ({ item }) => {
     return (
-        <div>
-            This is Post component
-        </div>
+        <section className="Post">
+            <h2> { item.title } </h2>
+            <p> User Id: { item.userId } </p>
+            <p> { item.body } </p>
+        </section>
     );
 };
 

@@ -28,15 +28,24 @@ const Posts = () => {
             console.log(response);
             setData(response.data);
         };
-        fetchData().then();
+
+        fetchData().catch(err => {
+            console.log(err)
+        });
     }, []);
 
 
     return (
-        <div>
-            <h2> This is Posts Component </h2>
-            <Post />
-        </div>
+        <main className="Posts">
+            {
+                data.map( item => (
+                    <Post
+                        item={ item }
+                        key={ item.id }
+                    />
+                ))
+            }
+        </main>
     );
 };
 

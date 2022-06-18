@@ -10,7 +10,7 @@ import Posts from './components/Posts/Posts';
 const App = () => {
 
     /// Initial State Management
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
 
     return (
         <MyStateManagement.Provider value={{
