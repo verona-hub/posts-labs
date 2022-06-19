@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from 'react';
 import axios from "axios";
 // Context
-import { MyStateManagement } from '../../components/Context/MyStateManagement';
+import { MyStateManagement } from '../Context/MyStateManagement';
 // Components
-import Post from './Post';
+import PostsItem from './PostsItem';
 
 
 const Posts = () => {
@@ -24,14 +24,16 @@ const Posts = () => {
     // API request
     useEffect( () => {
         const fetchData = async () => {
-            const response = await axios(config);
-            console.log(response);
-            setData(response.data);
+            try {
+                const response = await axios(config);
+                console.log(response);
+                setData(response.data)
+            } catch(err) {
+                console.log(err);
+            }
         };
 
-        fetchData().catch(err => {
-            console.log(err)
-        });
+        fetchData().then();
     }, []);
 
 
@@ -39,7 +41,7 @@ const Posts = () => {
         <main className="Posts">
             {
                 data.map( item => (
-                    <Post
+                    <PostsItem
                         item={ item }
                         key={ item.id }
                     />

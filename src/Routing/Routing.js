@@ -3,7 +3,8 @@ import React from 'react';
 import { Route, Routes } from "react-router-dom";
 // Components
 import App from '../App';
-
+import Posts from '../components/Posts/Posts';
+import Post from '../components/Posts/Post';
 
 const Routing = () => {
     return (
@@ -11,6 +12,10 @@ const Routing = () => {
             <Route
                 exact path='/'
                 element={ <App />}
+            />
+            <Route
+                path='post/:id'
+                element={ <Post />}
             />
         </Routes>
     );

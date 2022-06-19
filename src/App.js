@@ -4,6 +4,7 @@ import './App.css';
 // Context
 import { MyStateManagement } from './components/Context/MyStateManagement';
 // Components
+import Routing from './Routing/Routing';
 import Posts from './components/Posts/Posts';
 
 
@@ -11,12 +12,15 @@ const App = () => {
 
     /// Initial State Management
     const [data, setData] = useState([]);
+    const [dataPost, setDataPost] = useState([]);
 
     return (
         <MyStateManagement.Provider value={{
-            data, setData
+            data, setData,
+            dataPost, setDataPost
         }}>
             <div className="App">
+                {/*<Routing />*/}
                 <Posts />
             </div>
         </MyStateManagement.Provider>
