@@ -11,7 +11,7 @@ const Posts = ({ propsMessage, componentName }) => {
     console.log(propsMessage, componentName);
 
     // Import state from Context
-    const { data, setData } = useContext(MyStateManagement);
+    const { posts, setPosts } = useContext(MyStateManagement);
 
     // API config
     const config = {
@@ -28,7 +28,7 @@ const Posts = ({ propsMessage, componentName }) => {
         const fetchData = async () => {
             try {
                 const response = await axios(config);
-                setData(response.data)
+                setPosts(response.data)
             } catch(err) {
                 console.log(err);
             }
@@ -41,7 +41,7 @@ const Posts = ({ propsMessage, componentName }) => {
     return (
         <main className="Posts">
             {
-                data.map( item => (
+                posts.map( item => (
                     <PostsItem
                         item={ item }
                         key={ item.id }

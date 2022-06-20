@@ -4,7 +4,7 @@ import axios from "axios";
 // Context
 import { MyStateManagement } from '../Context/MyStateManagement';
 // Components
-import Comments from './Comments';
+import Comments from './Comments/Comments';
 
 
 const Post = () => {
@@ -43,9 +43,13 @@ const Post = () => {
         <article className="Post">
             <h1>{dataPost.title}</h1>
             <p>{dataPost.body}</p>
-            <br />
+
+            <Comments
+                propsMessage='Hello from'
+                componentName='Comments component'
+            />
+
             <button onClick={() => navigate('/')}> Go Home </button>
-            <Comments />
         </article>
     );
 };

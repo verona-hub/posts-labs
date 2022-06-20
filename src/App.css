@@ -25,7 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 150px auto;
+    padding: 100px;
 }
 
 .Post button {
@@ -36,7 +36,29 @@ body {
     cursor: pointer;
     font-size: 18px;
     font-family: inherit;
-    margin: 60px;
+    margin: 10px auto 100px;
     padding: 14px 22px;
     text-align: center;
+}
+
+.Comments {
+    margin: 50px auto;
+}
+
+.Comments h2 {
+    text-decoration: underline;
+}
+
+.Comment {
+    margin: 30px auto;
+}
+
+.Comment h4,
+.Comment p {
+    margin: 0;
+    padding: 0;
+}
+
+.Comment h4 {
+    margin: 5px auto;
 }

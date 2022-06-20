@@ -2,9 +2,13 @@ import React, { useEffect, useContext } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 // Context
-import { MyStateManagement } from '../Context/MyStateManagement';
+import { MyStateManagement } from '../../Context/MyStateManagement';
+// Components
+import Comment from './Comment';
+import PostsItem from "../PostsItem";
 
-const Comments = () => {
+
+const Comments = ({ propsMessage, componentName }) => {
 
     // Import state from Context
     const { comments, setComments } = useContext(MyStateManagement);
@@ -36,9 +40,18 @@ const Comments = () => {
 
 
     return (
-        <div>
-            <h2> Comments component </h2>
-        </div>
+        <section className="Comments">
+            {
+                comments.map(item => (
+                    <Comment
+                        item={ item }
+                        key={item.id}
+                        propsMessage='Hello from'
+                        componentName='Comment component'
+                    />
+                ))
+            }
+        </section>
     );
 };
 

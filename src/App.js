@@ -11,13 +11,13 @@ import Posts from './components/Posts/Posts';
 const App = () => {
 
     /// Initial State Management
-    const [data, setData] = useState([]);
+    const [posts, setPosts] = useState([]);
     const [dataPost, setDataPost] = useState([]);
     const [comments, setComments] = useState([]);
 
     return (
         <MyStateManagement.Provider value={{
-            data, setData,
+            posts, setPosts,
             dataPost, setDataPost,
             comments, setComments
         }}>
