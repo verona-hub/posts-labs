@@ -6,12 +6,13 @@ import App from '../App';
 import Posts from '../components/Posts/Posts';
 import Post from '../components/Posts/Post';
 
+
 const Routing = () => {
     return (
         <Routes>
             <Route
-                exact path='/'
-                element={ <App />}
+                exact path='/posts'
+                element={ <Posts />}
             />
             <Route
                 path='post/:id'

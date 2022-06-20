@@ -6,7 +6,9 @@ import { MyStateManagement } from '../Context/MyStateManagement';
 import PostsItem from './PostsItem';
 
 
-const Posts = () => {
+const Posts = ({ propsMessage, componentName }) => {
+
+    console.log(propsMessage, componentName);
 
     // Import state from Context
     const { data, setData } = useContext(MyStateManagement);
@@ -44,6 +46,8 @@ const Posts = () => {
                     <PostsItem
                         item={ item }
                         key={ item.id }
+                        propsMessage='Hello from'
+                        componentName='PostsItem component'
                     />
                 ))
             }

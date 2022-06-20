@@ -20,8 +20,11 @@ const App = () => {
             dataPost, setDataPost
         }}>
             <div className="App">
-                {/*<Routing />*/}
-                <Posts />
+                <Routing />
+                <Posts
+                    propsMessage='Hello from'
+                    componentName='Posts component'
+                />
             </div>
         </MyStateManagement.Provider>
     );

@@ -43,7 +43,7 @@ const Post = () => {
             <h1>{dataPost.title}</h1>
             <p>{dataPost.body}</p>
             <br />
-            {/*<button onClick={() => navigate('/')}> Go back </button>*/}
+            <button onClick={() => navigate('/')}> Go Home </button>
         </article>
     );
 };
