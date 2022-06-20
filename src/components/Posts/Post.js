@@ -41,8 +41,10 @@ const Post = () => {
 
     return (
         <article className="Post">
-            <h1>{dataPost.title}</h1>
-            <p>{dataPost.body}</p>
+            <div className="post-content">
+                <h2> { dataPost.title } </h2>
+                <p> { dataPost.body } </p>
+            </div>
 
             <Comments
                 propsMessage='Hello from'

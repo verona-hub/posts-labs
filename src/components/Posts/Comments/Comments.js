@@ -5,10 +5,11 @@ import axios from 'axios';
 import { MyStateManagement } from '../../Context/MyStateManagement';
 // Components
 import Comment from './Comment';
-import PostsItem from "../PostsItem";
 
 
 const Comments = ({ propsMessage, componentName }) => {
+
+    console.log(propsMessage, componentName);
 
     // Import state from Context
     const { comments, setComments } = useContext(MyStateManagement);

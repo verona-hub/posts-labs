@@ -3,7 +3,20 @@ body {
     background-color: #CDB6D6;
 }
 
-.Posts {
+h1 {
+    margin: 100px;
+    text-align: center;
+}
+
+.App .title {
+    text-decoration: none;
+}
+
+/*
+Posts
+*/
+
+.Posts .filtered-posts {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -21,10 +34,10 @@ body {
 }
 
 .Post {
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 100px;
 }
 
@@ -40,6 +53,18 @@ body {
     padding: 14px 22px;
     text-align: center;
 }
+
+.Post .post-content {
+    border: 1px solid;
+    border-radius: 6px;
+    margin-bottom: 60px;
+    padding: 60px;
+    text-align: center;
+}
+
+/*
+Comments
+*/
 
 .Comments {
     margin: 50px auto;
@@ -61,4 +86,20 @@ body {
 
 .Comment h4 {
     margin: 5px auto;
+}
+
+/*
+Search
+*/
+
+.Search {
+    margin: 50px auto;
+    text-align: center;
+}
+
+.Search input {
+    width: 400px;
+    height: 30px;
+    font-size: 18px;
+    padding-left: 10px;
 }

@@ -4,6 +4,7 @@ import axios from "axios";
 import { MyStateManagement } from '../Context/MyStateManagement';
 // Components
 import PostsItem from './PostsItem';
+import Search from '../Search/Search';
 
 
 const Posts = ({ propsMessage, componentName }) => {
@@ -11,7 +12,7 @@ const Posts = ({ propsMessage, componentName }) => {
     console.log(propsMessage, componentName);
 
     // Import state from Context
-    const { posts, setPosts } = useContext(MyStateManagement);
+    const { search, posts, setPosts } = useContext(MyStateManagement);
 
     // API config
     const config = {
@@ -40,16 +41,21 @@ const Posts = ({ propsMessage, componentName }) => {
 
     return (
         <main className="Posts">
-            {
-                posts.map( item => (
-                    <PostsItem
-                        item={ item }
-                        key={ item.id }
-                        propsMessage='Hello from'
-                        componentName='PostsItem component'
-                    />
-                ))
-            }
+            <Search />
+            <section className='filtered-posts'>
+                {
+                    posts
+                        .filter( item => item.title.toLowerCase().includes(search.toLowerCase()) && item )
+                        .map( item =>
+                            <PostsItem
+                                item={ item }
+                                key={ item.id }
+                                propsMessage='Hello from'
+                                componentName='PostsItem component'
+                            />
+                        )
+                }
+            </section>
         </main>
     );
 };
