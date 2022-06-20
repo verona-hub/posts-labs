@@ -11,7 +11,7 @@ const Routing = () => {
     return (
         <Routes>
             <Route
-                exact path='/posts'
+                exact path='/'
                 element={ <Posts />}
             />
             <Route
