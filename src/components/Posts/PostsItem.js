@@ -8,7 +8,7 @@ const PostsItem = ({ item,  propsMessage, componentName  }) => {
 
     return (
         <article className="PostsItem">
-            <Link to={`post/${item.id}`} target='_blank' rel='noopener noreferrer'>
+            <Link to={`posts/${item.id}`} target='_blank' rel='noopener noreferrer'>
                 <h2> { item.title } </h2>
             </Link>
             <p> { item.body } </p>

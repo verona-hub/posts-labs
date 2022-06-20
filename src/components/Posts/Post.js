@@ -39,7 +39,7 @@ const Post = () => {
     }, []);
 
     return (
-        <article>
+        <article className="Post">
             <h1>{dataPost.title}</h1>
             <p>{dataPost.body}</p>
             <br />

@@ -15,7 +15,11 @@ const Routing = () => {
                 element={ <Posts />}
             />
             <Route
-                path='post/:id'
+                path='posts/:id'
+                element={ <Post />}
+            />
+            <Route
+                path='posts/:id/comments'
                 element={ <Post />}
             />
         </Routes>
