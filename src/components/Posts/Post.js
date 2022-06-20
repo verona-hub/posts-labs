@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import { useParams, useNavigate  } from "react-router-dom";
+import axios from "axios";
 // Context
 import { MyStateManagement } from '../Context/MyStateManagement';
-import axios from "axios";
+// Components
+import Comments from './Comments';
 
 
 const Post = () => {
@@ -28,7 +30,6 @@ const Post = () => {
         const fetchData = async () => {
             try {
                 const response = await axios(config);
-                console.log(response.data);
                 setDataPost(response.data)
             } catch(err) {
                 console.log(err);
@@ -44,6 +45,7 @@ const Post = () => {
             <p>{dataPost.body}</p>
             <br />
             <button onClick={() => navigate('/')}> Go Home </button>
+            <Comments />
         </article>
     );
 };

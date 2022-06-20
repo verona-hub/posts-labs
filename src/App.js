@@ -13,11 +13,13 @@ const App = () => {
     /// Initial State Management
     const [data, setData] = useState([]);
     const [dataPost, setDataPost] = useState([]);
+    const [comments, setComments] = useState([]);
 
     return (
         <MyStateManagement.Provider value={{
             data, setData,
-            dataPost, setDataPost
+            dataPost, setDataPost,
+            comments, setComments
         }}>
             <div className="App">
                 <Routing />

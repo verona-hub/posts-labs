@@ -28,7 +28,6 @@ const Posts = ({ propsMessage, componentName }) => {
         const fetchData = async () => {
             try {
                 const response = await axios(config);
-                console.log(response);
                 setData(response.data)
             } catch(err) {
                 console.log(err);
